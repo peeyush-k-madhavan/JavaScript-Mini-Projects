@@ -18,7 +18,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  background: linear-gradient(to top left, #eb8cd8, #7dd56f);
+  background: linear-gradient(to top left, #eb8cd8, #615af7);
 }
 
 .show-modal {
