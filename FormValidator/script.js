@@ -27,10 +27,27 @@ function isValidEmail(email) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
-
+//Check Required
+function checkrequired(inputArr) {
+  inputArr.forEach(function (input) {
+    if (input.value.trim() === "") {
+      showError(input, `${getFieldName(input)} is required`);
+    } else {
+      showSuccess(input);
+    }
+  });
+}
+//Field Name (ID)
+function getFieldName(input) {
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
 //Event Listeners
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+  checkrequired([username, email, password, password2]);
+
+  //Basic Validation
+  /*
   if (username.value === "") {
     showError(username, "Username is required");
   } else {
@@ -55,5 +72,5 @@ form.addEventListener("submit", function (e) {
     showError(password2, "Password is required");
   } else {
     showSuccess(password2);
-  }
+  }*/
 });
