@@ -12,6 +12,12 @@ function updateCount() {
   const selectedCount = selectedSeats.length;
   count.innerText = selectedCount;
   total.innerText = selectedCount * ticketPrice;
+
+  const seatsIndex = [...selectedSeats].map(function (seat) {
+    return [...seats].indexOf(seat);
+  });
+
+  localStorage.setItem("selectedSeats", JSON.stringfy(seatsIndex));
 }
 
 container.addEventListener("click", function (e) {
@@ -25,7 +31,13 @@ container.addEventListener("click", function (e) {
   }
 });
 
+function saveMovieData(index, price) {
+  localStorage.setItem("selectedIndex", index);
+  localStorage.setItem("selectedPrice", price);
+}
+
 movieSelect.addEventListener("change", function (e) {
   ticketPrice = +e.target.value;
   updateCount();
+  saveMovieData(e.target.selectedIndex, e.target.value);
 });
