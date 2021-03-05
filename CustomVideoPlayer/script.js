@@ -32,7 +32,7 @@ function updateProgress() {
 }
 
 function setProgress() {
-  return true;
+  video.currentTime = (+progress.value * video.duration) / 100;
 }
 
 function stopVideo() {
