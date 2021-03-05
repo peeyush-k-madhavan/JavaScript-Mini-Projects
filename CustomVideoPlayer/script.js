@@ -28,7 +28,7 @@ function updatePlay() {
 }
 
 function updateProgress() {
-  return true;
+  progress.value = (video.currentTime / video.duration) * 100;
 }
 
 function setProgress() {
@@ -46,7 +46,7 @@ video.addEventListener("pause", updatePlay);
 
 video.addEventListener("play", updatePlay);
 
-video.addEventListener("timeUpdate", updateProgress);
+video.addEventListener("timeupdate", updateProgress);
 
 play.addEventListener("click", toggleStatus);
 
