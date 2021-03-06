@@ -10,3 +10,5 @@ Custom video player using the HTML5 video element and it's JavaScript API with a
 - Video progress bar
 - Set progress bar time
 - Display time in mins and seconds
+
+[LIVE DEMO](https://peeyush-k-madhavan.github.io/JavaScript-Mini-Projects/CustomVideoPlayer/)
